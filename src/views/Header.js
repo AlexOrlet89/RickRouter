@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { useCharacterContext } from '../context/CharacterContext';
 
 export default function Header() {
@@ -7,7 +8,6 @@ export default function Header() {
   const handleFilter = (e) => {
     // console.log(e.target.className);
     setFilter(e.target.className);
-    console.log(filter);
   };
 
   return (
