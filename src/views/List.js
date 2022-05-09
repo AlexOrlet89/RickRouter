@@ -5,7 +5,8 @@ import { fetchCharacters } from '../services/FetchCharacters';
 import Detail from './Detail';
 
 export default function List() {
-  //   const [page, setPage] = useState(1);
+  const [maxPage, setMaxPage] = useState(1);
+
   const { filter, characters, setCharacters, setPage, page } =
     useCharacterContext();
 
@@ -13,8 +14,8 @@ export default function List() {
     // console.log(filter);
     const data = async () => {
       const fetched = await fetchCharacters(filter, page);
-      //   console.log(fetched);
-      setCharacters(fetched);
+      setMaxPage(fetched.info.pages);
+      setCharacters(fetched.results);
       //   console.log(characters);
     };
     data();
@@ -23,10 +24,15 @@ export default function List() {
 
   useEffect(async () => {
     const data = await fetchCharacters(filter, page);
-    setCharacters(data);
+    setMaxPage(data.info.pages);
+    console.log(data.info.pages);
+    setCharacters(data.results);
   }, [filter, page]);
 
   const handleNextPage = () => {
+    if (page === maxPage) {
+      return;
+    }
     setPage(page + 1);
   };
 
@@ -40,6 +46,7 @@ export default function List() {
   return (
     <>
       <h3>{filter} Characters</h3>
+      <h5>page {page}</h5>
       <div>
         <ul>
           <li onClick={handleNextPage}>NextPage</li>

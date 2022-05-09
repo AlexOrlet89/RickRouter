@@ -5,14 +5,14 @@ export async function fetchCharacters(filter, page) {
     );
     const results = await res.json();
     // console.log(results);
-    return results.results;
+    return results;
   } else {
     const res = await fetch(
       `https://rickandmortyapi.com/api/character/?page=${page}&name=${filter}`
     );
     const results = await res.json();
     // console.log(results);
-    return results.results;
+    return results;
   }
 }
 

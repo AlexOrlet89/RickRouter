@@ -9,7 +9,7 @@ export default function Detail() {
   useEffect(() => {
     const data = async () => {
       const fetched = await fetchCharacter(id);
-      console.log('fetched', fetched);
+      //   console.log('fetched', fetched);
       setCharacter(fetched);
     };
     data();
