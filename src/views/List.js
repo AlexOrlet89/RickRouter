@@ -5,8 +5,9 @@ import { fetchCharacters } from '../services/FetchCharacters';
 import Detail from './Detail';
 
 export default function List() {
-  const [page, setPage] = useState(1);
-  const { filter, characters, setCharacters } = useCharacterContext();
+  //   const [page, setPage] = useState(1);
+  const { filter, characters, setCharacters, setPage, page } =
+    useCharacterContext();
 
   useEffect(() => {
     // console.log(filter);

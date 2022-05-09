@@ -7,12 +7,13 @@ export const CharacterContext = createContext();
 //handlefilterfunctions
 
 export const CharacterProvider = ({ children }) => {
+  const [page, setPage] = useState(1);
   const [filter, setFilter] = useState('All');
   const [characters, setCharacters] = useState([]);
 
   return (
     <CharacterContext.Provider
-      value={{ filter, setFilter, characters, setCharacters }}
+      value={{ filter, setFilter, characters, setCharacters, page, setPage }}
     >
       {children}
     </CharacterContext.Provider>
