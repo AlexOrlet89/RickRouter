@@ -1,12 +1,14 @@
-export async function fetchCharacters(filter) {
+export async function fetchCharacters(filter, page) {
   if (filter === 'All') {
-    const res = await fetch(`https://rickandmortyapi.com/api/character`);
+    const res = await fetch(
+      `https://rickandmortyapi.com/api/character/?page=${page}`
+    );
     const results = await res.json();
     // console.log(results);
     return results.results;
   } else {
     const res = await fetch(
-      `https://rickandmortyapi.com/api/character/?name=${filter}`
+      `https://rickandmortyapi.com/api/character/?page=${page}&name=${filter}`
     );
     const results = await res.json();
     // console.log(results);
@@ -15,9 +17,9 @@ export async function fetchCharacters(filter) {
 }
 
 export async function fetchCharacter(id) {
-  console.log(id);
+  // console.log(id);
   const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
   const results = await res.json();
-  console.log(results);
+  // console.log(results);
   return results;
 }
