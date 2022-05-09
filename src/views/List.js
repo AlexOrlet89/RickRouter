@@ -1,29 +1,16 @@
 import React, { useEffect } from 'react';
+import { useRouteMatch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useCharacterContext } from '../context/CharacterContext';
 import { fetchCharacters } from '../services/FetchCharacters';
 
 export default function List() {
   const { filter, characters, setCharacters } = useCharacterContext();
-  console.log(characters);
-  //   useEffect(() => {
-  //     const fetchCharacters = async () => {
-  //       if (filter === 'All') {
-  //         const res = await fetch(`https://rickandmortyapi.com/api/character`);
-  //         const results = await res.json();
-  //         console.log(results);
-  //       } else {
-  //         const res = await fetch(
-  //           `https://rickandmortyapi.com/api/character/?name=${filter}`
-  //         );
-  //         const results = await res.json();
-  //         console.log(results);
-  //       }
-  //     };
-  //     fetchCharacters();
-  //   }, [filter]);
+  const { url, path } = useRouteMatch();
+  console.log(url, path);
 
   useEffect(() => {
-    console.log(filter);
+    // console.log(filter);
     const data = async () => {
       const fetched = await fetchCharacters(filter);
       //   console.log(fetched);
@@ -31,18 +18,25 @@ export default function List() {
       //   console.log(characters);
     };
     data();
-    console.log('characters on load', characters);
+    // console.log('characters on load', characters);
   }, []);
 
-  //   useEffect(async () => {
-  //     const data = await fetchCharacters(filter);
-  //     setCharacters(data);
-  //     console.log('characters', characters);
-  //   }, [filter]);
+  useEffect(async () => {
+    const data = await fetchCharacters(filter);
+    setCharacters(data);
+    // console.log('characters', characters);
+  }, [filter]);
 
   return (
     <>
-      <h3>Characters</h3>
+      <h3>{filter} Characters</h3>
+      <ul>
+        {characters.map((character) => (
+          //   <Link to={url}>
+          <li key={character.name}>{character.name}</li>
+          //   </Link>
+        ))}
+      </ul>
     </>
   );
 }
