@@ -13,3 +13,11 @@ export async function fetchCharacters(filter) {
     return results.results;
   }
 }
+
+export async function fetchCharacter(id) {
+  console.log(id);
+  const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+  const results = await res.json();
+  console.log(results);
+  return results;
+}
