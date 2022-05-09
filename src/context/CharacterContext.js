@@ -8,9 +8,12 @@ export const CharacterContext = createContext();
 
 export const CharacterProvider = ({ children }) => {
   const [filter, setFilter] = useState('All');
-  //   const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState([]);
+
   return (
-    <CharacterContext.Provider value={{ filter, setFilter }}>
+    <CharacterContext.Provider
+      value={{ filter, setFilter, characters, setCharacters }}
+    >
       {children}
     </CharacterContext.Provider>
   );
