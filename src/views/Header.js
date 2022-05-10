@@ -18,6 +18,9 @@ export default function Header() {
       <Link to="/">
         <h3>Back to Splash</h3>
       </Link>
+      <Link to="/profile">
+        <h3>Profile</h3>
+      </Link>
       <div className={styles.filter}>
         <h5 className="All" onClick={(e) => handleFilter(e)}>
           All

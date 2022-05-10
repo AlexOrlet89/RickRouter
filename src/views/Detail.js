@@ -15,6 +15,9 @@ export default function Detail() {
     data();
   }, [id]);
 
+  let trueRick = String(character.name).includes('Rick');
+  let trueMorty = String(character.name).includes('Morty');
+
   return (
     <>
       <h2>Character Preview</h2>
@@ -22,6 +25,8 @@ export default function Detail() {
       <img src={character.image}></img>
       <h3>{character.status}</h3>
       <h3>{character.species}</h3>
+      {trueRick && <button>Add Rick</button>}
+      {trueMorty && <button>Add Morty</button>}
     </>
   );
 }

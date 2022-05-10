@@ -8,20 +8,18 @@ import styles from './Home.css';
 export default function Home() {
   return (
     <>
-      <Switch>
-        <div className={styles.homecontents}>
-          <div>
-            <Route path={`/`}>
-              <List />
-            </Route>
-          </div>
-          <div>
-            <Route path={`/character/:id`}>
-              <Detail />
-            </Route>
-          </div>
+      <div className={styles.homecontents}>
+        <div>
+          <Route path={`/`}>
+            <List />
+          </Route>
         </div>
-      </Switch>
+        <div>
+          <Route path={`/character/:id`}>
+            <Detail />
+          </Route>
+        </div>
+      </div>
     </>
   );
 }
