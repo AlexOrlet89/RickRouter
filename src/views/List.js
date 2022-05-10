@@ -24,7 +24,7 @@ export default function List() {
   useEffect(async () => {
     const data = await fetchCharacters(filter, page);
     setMaxPage(data.info.pages);
-    console.log(data.info.pages);
+    // console.log(data.info.pages);
     setCharacters(data.results);
   }, [filter, page]);
 
