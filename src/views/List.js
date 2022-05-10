@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link, Route } from 'react-router-dom';
 import { useCharacterContext } from '../context/CharacterContext';
 import { fetchCharacters } from '../services/FetchCharacters';
-import Detail from './Detail';
 
 export default function List() {
   const [maxPage, setMaxPage] = useState(1);
