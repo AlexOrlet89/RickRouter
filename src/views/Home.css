@@ -1,0 +1,22 @@
+h2 {
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+}
+
+.homecontents {
+  background-color: rgb(16, 122, 86);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+div {
+  background-color: aqua;
+}

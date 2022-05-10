@@ -1,0 +1,10 @@
+.rickandmorty {
+  background-color: rgb(16, 122, 86);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+* {
+  text-align: center;
+}
