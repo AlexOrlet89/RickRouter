@@ -8,7 +8,6 @@ import styles from './Home.css';
 export default function Home() {
   return (
     <>
-      <h2>Pick your own Rick and Morty</h2>
       <Switch>
         <div className={styles.homecontents}>
           <div>

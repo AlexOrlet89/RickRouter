@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useCharacterContext } from '../context/CharacterContext';
+import styles from './Header.css';
 
 export default function Header() {
   const { setFilter, setPage } = useCharacterContext();
@@ -12,7 +14,11 @@ export default function Header() {
 
   return (
     <>
-      <div className="filters">
+      <h1>Pick your own Rick and Morty</h1>
+      <Link to="/">
+        <h3>Back to Splash</h3>
+      </Link>
+      <div className={styles.filter}>
         <h5 className="All" onClick={(e) => handleFilter(e)}>
           All
         </h5>

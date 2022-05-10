@@ -1,0 +1,12 @@
+.filter {
+  /* text-align: center; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: bisque;
+}
+
+h1,
+h3 {
+  text-align: center;
+}

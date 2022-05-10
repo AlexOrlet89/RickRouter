@@ -4,7 +4,7 @@ import styles from './Welcome.css';
 
 export default function Welcome() {
   return (
-    <Link to="/home">
+    <Link to="/character">
       <div className={styles.filler}>Welcome</div>;
     </Link>
   );
