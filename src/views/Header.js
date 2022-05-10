@@ -12,13 +12,15 @@ export default function Header() {
     setPage(1);
   };
 
+  console.log(location.pathname);
+
   return (
     <>
       <h1>Pick your own Rick and Morty</h1>
       <Link to="/">
         <h3>Back to Splash</h3>
       </Link>
-      <Link to="/profile">
+      <Link to={{ pathname: '/profile', state: { from: location.pathname } }}>
         <h3>Profile</h3>
       </Link>
       <div className={styles.filter}>
