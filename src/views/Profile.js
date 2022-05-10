@@ -8,11 +8,12 @@ export default function Profile() {
   const location = useLocation();
   const history = useHistory();
 
-  const { from } = location.state || { from: { pathname: '/' } };
-  console.log(from);
+  // const { from } = location.state || { from: history.location.state };
+  // console.log(history.location.state);
+  // console.log(location.state);
 
   const handleBack = () => {
-    history.replace(from);
+    history.goBack();
   };
 
   return (
