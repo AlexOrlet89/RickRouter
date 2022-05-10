@@ -50,16 +50,18 @@ export default function List() {
       <div>
         <ul>
           <li onClick={handleNextPage}>NextPage</li>
+          <hr />
           {characters.map((character) => (
             <Link key={character.id} to={`/character/${character.id}`}>
               <li>{character.name}</li>
             </Link>
           ))}
+          <hr />
           <li onClick={handlePrevPage}>PrevPage</li>
         </ul>
-        <Route path={`/character/:id`}>
-          <Detail />
-        </Route>
+        {/* <Route path={`/character/:id`}> */}
+        {/* <Detail /> */}
+        {/* </Route> */}
       </div>
     </>
   );

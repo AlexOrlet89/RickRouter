@@ -12,16 +12,17 @@ export default function Header() {
 
   return (
     <>
-      <div>Header</div>
-      <h5 className="All" onClick={(e) => handleFilter(e)}>
-        All
-      </h5>
-      <h5 className="Rick" onClick={(e) => handleFilter(e)}>
-        Ricks
-      </h5>
-      <h5 className="Morty" onClick={(e) => handleFilter(e)}>
-        Morties
-      </h5>
+      <div className="filters">
+        <h5 className="All" onClick={(e) => handleFilter(e)}>
+          All
+        </h5>
+        <h5 className="Rick" onClick={(e) => handleFilter(e)}>
+          Ricks
+        </h5>
+        <h5 className="Morty" onClick={(e) => handleFilter(e)}>
+          Morties
+        </h5>
+      </div>
     </>
   );
 }
